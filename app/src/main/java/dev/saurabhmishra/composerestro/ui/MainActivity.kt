@@ -9,6 +9,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import dev.saurabhmishra.composerestro.ui.home.HomeScreen
 import dev.saurabhmishra.composerestro.ui.splash.SplashScreen
 import dev.saurabhmishra.composerestro.ui.theme.ComposeRestroTheme
 import dev.saurabhmishra.composerestro.utils.AppConstants.Routes
@@ -29,6 +30,7 @@ fun Content() {
   ComposeRestroTheme {
     NavHost(navController = navController, startDestination = Routes.SPLASH) {
       composable(Routes.SPLASH) { SplashScreen() }
+      composable(Routes.HOME) { HomeScreen() }
     }
   }
 }
