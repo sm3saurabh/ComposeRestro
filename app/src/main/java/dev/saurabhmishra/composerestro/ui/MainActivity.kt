@@ -9,12 +9,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import dagger.hilt.android.AndroidEntryPoint
 import dev.saurabhmishra.composerestro.ui.home.HomeScreen
 import dev.saurabhmishra.composerestro.ui.splash.SplashScreen
 import dev.saurabhmishra.composerestro.ui.theme.ComposeRestroTheme
 import dev.saurabhmishra.composerestro.utils.AppConstants.Routes
 
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
