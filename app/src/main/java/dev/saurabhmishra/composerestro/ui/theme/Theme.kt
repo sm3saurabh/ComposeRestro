@@ -6,24 +6,21 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 
-private val DarkColorPalette = darkColors(
-  primary = purple200,
-  primaryVariant = purple700,
-  secondary = teal200
+private val darkColorPalette = darkColors(
+  primary = grey200,
+  primaryVariant = grey500,
+  secondary = teal200,
+  secondaryVariant = teal500,
+  error = errorRed,
+
 )
 
-private val LightColorPalette = lightColors(
-  primary = purple500,
-  primaryVariant = purple700,
-  secondary = teal200
-/* Other default colors to override
-background = Color.White,
-surface = Color.White,
-onPrimary = Color.White,
-onSecondary = Color.Black,
-onBackground = Color.Black,
-onSurface = Color.Black,
-*/
+private val lightColorPalette = lightColors(
+  primary = teal200,
+  primaryVariant = teal500,
+  secondary = grey200,
+  secondaryVariant = grey500,
+  error = errorRed,
 )
 
 @Composable
@@ -32,14 +29,13 @@ fun ComposeRestroTheme(
   content: @Composable() () -> Unit
 ) {
   val colors = if (darkTheme) {
-    DarkColorPalette
+    darkColorPalette
   } else {
-    LightColorPalette
+    lightColorPalette
   }
 
   MaterialTheme(
     colors = colors,
-    typography = typography,
     shapes = shapes,
     content = content
   )
