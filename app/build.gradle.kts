@@ -80,6 +80,8 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES_VERSION}")
 
+    implementation("com.jakewharton.timber:timber:${Versions.TIMBER_VERSION}")
+
 
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.0")
     implementation("androidx.test.ext:junit:1.1.2")
