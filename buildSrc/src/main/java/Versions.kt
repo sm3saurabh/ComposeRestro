@@ -1,4 +1,5 @@
 object Versions {
+  const val TIMBER_VERSION = "4.7.1"
   const val COROUTINES_VERSION = "1.4.2"
   const val HILT_VERSION = "2.32-alpha"
   const val LIFECYCLE_VERSION = "2.3.0"
