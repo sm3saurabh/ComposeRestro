@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -64,7 +65,21 @@ dependencies {
     implementation("androidx.core:core-ktx:1.5.0-beta02")
     implementation("androidx.activity:activity-compose:1.3.0-alpha03")
 
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE_VERSION}")
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE_VERSION}")
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.VIEWMODEL_COMPOSE_VERSION}")
+
+
     implementation("androidx.navigation:navigation-compose:${Versions.COMPOSE_NAVIGATION}")
+
+    implementation("com.google.dagger:hilt-android:${Versions.HILT_VERSION}")
+    kapt("com.google.dagger:hilt-compiler:${Versions.HILT_VERSION}")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES_VERSION}")
+
 
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.0")
     implementation("androidx.test.ext:junit:1.1.2")
