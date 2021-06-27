@@ -45,25 +45,30 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation("androidx.core:core-ktx:1.3.2")
-    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("androidx.core:core-ktx:1.5.0")
+    implementation("androidx.appcompat:appcompat:1.3.0")
     implementation("com.google.android.material:material:1.3.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.KOTLIN_VERSION}")
 
-
-    implementation("androidx.compose.runtime:runtime:${Versions.COMPOSE_VERSION}")
+    
     implementation("androidx.compose.ui:ui:${Versions.COMPOSE_VERSION}")
-    implementation("androidx.compose.foundation:foundation-layout:${Versions.COMPOSE_VERSION}")
-    implementation("androidx.compose.material:material:${Versions.COMPOSE_VERSION}")
-    implementation("androidx.compose.material:material-icons-extended:${Versions.COMPOSE_VERSION}")
-    implementation("androidx.compose.foundation:foundation:${Versions.COMPOSE_VERSION}")
-    implementation("androidx.compose.animation:animation:${Versions.COMPOSE_VERSION}")
+    // Tooling support (Previews, etc.)
     implementation("androidx.compose.ui:ui-tooling:${Versions.COMPOSE_VERSION}")
+    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
+    implementation("androidx.compose.foundation:foundation:${Versions.COMPOSE_VERSION}")
+    // Material Design
+    implementation("androidx.compose.material:material:${Versions.COMPOSE_VERSION}")
+    // Material design icons
+    implementation("androidx.compose.material:material-icons-core:${Versions.COMPOSE_VERSION}")
+    implementation("androidx.compose.material:material-icons-extended:${Versions.COMPOSE_VERSION}")
+    // Integration with observables
     implementation("androidx.compose.runtime:runtime-livedata:${Versions.COMPOSE_VERSION}")
+    implementation("androidx.compose.runtime:runtime-rxjava2:${Versions.COMPOSE_VERSION}")
 
-    implementation("androidx.appcompat:appcompat:1.3.0-beta01")
-    implementation("androidx.activity:activity-ktx:1.2.0")
-    implementation("androidx.core:core-ktx:1.5.0-beta02")
-    implementation("androidx.activity:activity-compose:1.3.0-alpha03")
+
+    implementation("androidx.appcompat:appcompat:1.4.0-alpha02")
+    implementation("androidx.activity:activity-ktx:1.2.3")
+    implementation("androidx.activity:activity-compose:1.3.0-beta02")
 
     // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE_VERSION}")
@@ -84,7 +89,16 @@ dependencies {
 
 
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.0")
-    implementation("androidx.test.ext:junit:1.1.2")
-    implementation("junit:junit:4.+")
-    implementation("androidx.test.espresso:espresso-core:3.3.0")
+    testImplementation("androidx.test.ext:junit:1.1.2")
+    testImplementation("junit:junit:4.+")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+
+    // UI Tests
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:${Versions.COMPOSE_VERSION}")
+    implementation("androidx.core:core-ktx:+")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+
+}
+repositories {
+    mavenCentral()
 }
